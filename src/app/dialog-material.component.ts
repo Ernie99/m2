@@ -24,7 +24,30 @@ import {NgModule, Component, Input, Output, EventEmitter} from '@angular/core';
 
 
 `,
-  styleUrls: ['./app.component.css']
+  styles: [`
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.modalDialog {
+  max-width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 25px;
+  background: #fff;
+}
+
+.full-width { width: 100%; }
+
+.center { text-align: center; }
+`]
 })
 export class DialogMaterial {
   @Input() value: string;
@@ -35,5 +58,9 @@ export class DialogMaterial {
   @Input() template: string;
   @Input() cancelText: string;
   @Output() valueEmitted = new EventEmitter<string>();
+
+  log(text){
+    console.log(text)
+  }
 
 }
