@@ -1,0 +1,13 @@
+<h1>
+  {{title}}
+  <dialogmaterial-component
+    [title]="'Dialog Prompt'"
+    [template]="'This is our new material Design based Compunent:'"
+    [placeholder]="'Enter text here'"
+    [okText]="'Yes'"
+    [cancelText]="'No'"
+    [value]="'Starting Text'"
+    (valueEmitted)="log($event)"
+    [showPrompt]="'true'"
+  ></dialogmaterial-component>
+</h1>
